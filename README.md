@@ -18,7 +18,7 @@ Puedes ver el proceso en [este asciicinema](https://asciinema.org/a/IUC3MNxK7eUg
 # Pasos
 
 ```bash
-git clone
+git clone https://github.com/ntkog/parseo_boe_altos_cargos.git
 npm i
 cd data
 curl -sS  "https://www.boe.es/boe/dias/2018/09/29/pdfs/BOE-A-2018-13218.pdf" | pdftotext -htmlmeta -layout - - | pup 'pre text{}' | awk '/DA
