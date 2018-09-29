@@ -21,11 +21,10 @@ Puedes ver el proceso en [este asciicinema](https://asciinema.org/a/IUC3MNxK7eUg
 git clone https://github.com/ntkog/parseo_boe_altos_cargos.git
 npm i
 cd data
-curl -sS  "https://www.boe.es/boe/dias/2018/09/29/pdfs/BOE-A-2018-13218.pdf" | pdftotext -htmlmeta -layout - - | pup 'pre text{}' | awk '/DA
-TOS PERSONALES/{n++}{print > "tabla" n ".txt"}'
+curl -sS  "https://www.boe.es/boe/dias/2018/09/29/pdfs/BOE-A-2018-13218.pdf" | pdftotext -htmlmeta -layout - - | pup 'pre text{}' | awk '/DATOS PERSONALES/{n++}{print > "tabla" n ".txt"}'
 ls -1 > ../listado.txt
 cd ..
-for i in `cat data/listado.txt`; do node index.js $i ; done | grep failed > failed_log.txt
+for i in `cat listado.txt | sed -e '/^json/d' | sed -e '/^tabla\.txt/d' `; do node index.js $i ; done | grep failed > failed_log.txt
 ```
 
 > Al ejecutar este script se crearán ficheros *.json* de cada alto cargo en la carpeta *parsed*
