@@ -29,6 +29,6 @@ for i in `cat listado.txt | sed -e '/^json/d' | sed -e '/^tabla\.txt/d' `; do no
 
 > Al ejecutar este script se crearán ficheros *.json* de cada alto cargo en la carpeta *parsed*
 
-> *NOTA 1* en el fichero *failed_log.txt* , verás que han fallado 3 ficeheros. Posiblemente porque los datos de algún alto cargo pillarán entre una página y otra (Sólo han fallado 3 de 1400 y pico)
+> *NOTA 1* en el fichero *failed_log.txt* , verás que han fallado 3 ficheros. Posiblemente porque los datos de algún alto cargo pillarán entre una página y otra (Sólo han fallado 3 de 1400 y pico)
 
 > *NOTA 2* es posible que todavía no este fino el estructurado de datos , pero menos da una piedra de pdf, :-)
