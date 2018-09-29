@@ -1,0 +1,3 @@
+source file failed : ./data/tabla78.txt
+source file failed : ./data/tabla80.txt
+source file failed : ./data/tabla82.txt
